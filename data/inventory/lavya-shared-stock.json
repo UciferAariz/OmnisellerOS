@@ -1,0 +1,43 @@
+{
+  "updatedBy": "Lavya",
+  "purpose": "Shared SKU map for the L4 inventory sync moment.",
+  "syncRule": "One warehouse count is treated as the source of truth for every marketplace listing.",
+  "items": [
+    {
+      "sku": "SKU-DEMO-001",
+      "name": "Cotton Kurta Set",
+      "sharedStock": 24,
+      "lowStockAt": 5,
+      "linkedListings": {
+        "amazon": "ASIN-B0KURTA01",
+        "flipkart": "FK-KURTA-221",
+        "meesho": "MS-KURTA-77"
+      },
+      "demoMoment": "After one Amazon sale, every linked listing should show 23 available."
+    },
+    {
+      "sku": "SKU-LUNCH-004",
+      "name": "Steel Lunch Box",
+      "sharedStock": 4,
+      "lowStockAt": 6,
+      "linkedListings": {
+        "amazon": "ASIN-B0LUNCH04",
+        "flipkart": "FK-LUNCH-118",
+        "meesho": "MS-LUNCH-31"
+      },
+      "demoMoment": "Low-stock example for the dashboard story."
+    },
+    {
+      "sku": "SKU-SNKR-008",
+      "name": "Canvas Sneakers",
+      "sharedStock": 7,
+      "lowStockAt": 5,
+      "linkedListings": {
+        "amazon": "ASIN-B0SNKR08",
+        "flipkart": "FK-SNKR-512",
+        "myntra": "MY-SNKR-404"
+      },
+      "demoMoment": "Fashion marketplace example for pitch breadth."
+    }
+  ]
+}

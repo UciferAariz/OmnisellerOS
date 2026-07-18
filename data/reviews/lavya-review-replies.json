@@ -1,0 +1,24 @@
+{
+  "updatedBy": "Lavya",
+  "purpose": "Review examples and reply copy for L5.",
+  "reviews": [
+    {
+      "id": "MEESHO-REVIEW-001",
+      "marketplace": "meesho",
+      "rating": 1,
+      "customerName": "Anika Rao",
+      "sku": "SKU-DEMO-001",
+      "text": "The size was different from the chart and delivery took too long.",
+      "draftReply": "Hi Anika, we are sorry the kurta set did not match your size expectation and arrived late. Please share your order details with us so we can arrange a quick replacement or return pickup. We are updating the size chart and delivery promise for this listing today."
+    },
+    {
+      "id": "AMAZON-REVIEW-002",
+      "marketplace": "amazon",
+      "rating": 5,
+      "customerName": "Riya Sharma",
+      "sku": "SKU-DEMO-001",
+      "text": "Good fabric and fast packing.",
+      "draftReply": "Hi Riya, thank you for the kind words. We are glad the fabric and packing experience worked well for you."
+    }
+  ]
+}

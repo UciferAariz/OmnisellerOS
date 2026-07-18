@@ -1,0 +1,38 @@
+{
+  "updatedBy": "Lavya",
+  "purpose": "Presentation-ready marketplace labels and connector states for the OmniSeller OS demo.",
+  "marketplaces": [
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "badge": "A",
+      "status": "mocked",
+      "lastSync": "2 min ago",
+      "demoRole": "Primary sale trigger for the inventory sync moment"
+    },
+    {
+      "id": "flipkart",
+      "name": "Flipkart",
+      "badge": "F",
+      "status": "mocked",
+      "lastSync": "3 min ago",
+      "demoRole": "Shared stock proof after Amazon sale"
+    },
+    {
+      "id": "meesho",
+      "name": "Meesho",
+      "badge": "M",
+      "status": "mocked",
+      "lastSync": "5 min ago",
+      "demoRole": "1-star review reply workflow"
+    },
+    {
+      "id": "myntra",
+      "name": "Myntra",
+      "badge": "Y",
+      "status": "pitch-only",
+      "lastSync": "queued for connector",
+      "demoRole": "Shown in the unified seller story and pitch"
+    }
+  ]
+}
