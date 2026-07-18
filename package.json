@@ -1,0 +1,14 @@
+{
+  "name": "omniseller-os",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:connector": "node --input-type=module -e \"import('./connectors/demo.js').then(async ({ createDemoConnector }) => { const connector = createDemoConnector(); const before = await connector.getInventory(); await connector.updateStock('SKU-DEMO-001', before[0].availableStock - 1); const after = await connector.getInventory(); if (after[0].availableStock !== before[0].availableStock - 1) throw new Error('Stock update failed'); console.log('Connector contract smoke test passed'); })\"",
+    "test:router": "node --input-type=module -e \"import('./kernel/router.js').then(({ routeRequest }) => { const cases = [['show today’s orders', 'order-inbox'], ['who is low on stock', 'inventory'], ['generate invoice for order #4521', 'invoice'], ['reply to this 1-star review', 'replies']]; for (const [request, app] of cases) { if (routeRequest(request)?.app !== app) throw new Error('Route failed: ' + request); } if (routeRequest('hello there') !== null) throw new Error('Unexpected route'); console.log('Kernel router smoke test passed'); })\"",
+    "test:apps": "node --input-type=module -e \"Promise.all([import('./connectors/demo.js'), import('./apps/app-services.js')]).then(async ([{ createDemoConnector }, app]) => { const connectors = [createDemoConnector()]; const orders = await app.getUnifiedOrders(connectors); const inventory = await app.getUnifiedInventory(connectors); const messages = await app.getCustomerMessages(connectors); const invoice = app.buildGstInvoice(orders[0]); if (orders.length !== 1 || inventory[0].availableStock !== 24 || messages.length !== 1 || invoice.total !== 943) throw new Error('App data flow failed'); console.log('App services smoke test passed'); })\"",
+    "test:sync": "node --input-type=module -e \"Promise.all([import('./apps/inventory/inventory-store.js'), import('./connectors/demo.js')]).then(async ([{ createInventoryStore }, { createMockConnector }]) => { const store = createInventoryStore({ 'SKU-DEMO-001': 24 }); const amazon = createMockConnector('amazon', store); const flipkart = createMockConnector('flipkart', store); const meesho = createMockConnector('meesho', store); await amazon.simulateSale('SKU-DEMO-001'); const stock = await Promise.all([amazon, flipkart, meesho].map(async (connector) => (await connector.getInventory())[0].availableStock)); if (stock.join(',') !== '23,23,23') throw new Error('Marketplace stock is out of sync: ' + stock); console.log('Cross-platform sync smoke test passed'); })\"",
+    "test:demo": "node tests/demo-integration.mjs",
+    "test": "npm run test:connector && npm run test:router && npm run test:apps && npm run test:sync && npm run test:demo"
+  }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="OmniSeller OS - a unified seller workspace." />
+    <title>OmniSeller OS</title>
+    <link rel="stylesheet" href="shell/styles.css" />
+  </head>
+  <body>
+    <main class="desktop" aria-label="OmniSeller OS desktop">
+      <aside class="app-launcher" aria-label="Applications">
+        <button class="app-icon" type="button" data-app="order-inbox"><span aria-hidden="true">◫</span>Orders</button>
+        <button class="app-icon" type="button" data-app="inventory"><span aria-hidden="true">▦</span>Inventory</button>
+        <button class="app-icon" type="button" data-app="invoice"><span aria-hidden="true">▤</span>Invoices</button>
+        <button class="app-icon" type="button" data-app="replies"><span aria-hidden="true">✦</span>Replies</button>
+      </aside>
+      <section class="welcome-card">
+        <p class="eyebrow">Unified seller workspace</p>
+        <h1>OmniSeller OS</h1>
+        <p>Your marketplace command center is ready. Ask the kernel to launch an app.</p>
+        <form class="kernel-console" id="kernel-console">
+          <label for="kernel-request">Kernel command</label>
+          <div class="command-row">
+            <input id="kernel-request" name="request" placeholder="Try: show today's orders" autocomplete="off" />
+            <button type="submit">Run</button>
+          </div>
+        </form>
+        <p class="kernel-log" id="kernel-log" role="status" aria-live="polite">Kernel ready - waiting for a request.</p>
+        <div class="quick-commands" id="quick-commands" aria-label="Demo commands"></div>
+        <p class="status"><span aria-hidden="true"></span> Shell online - local demo mode</p>
+      </section>
+      <footer class="taskbar">
+        <strong>OmniSeller OS</strong>
+        <div class="taskbar-apps" id="taskbar-apps" aria-label="Open applications"></div>
+        <span>Local demo mode</span>
+      </footer>
+    </main>
+    <script type="module" src="shell/desktop.js"></script>
+  </body>
+</html>
