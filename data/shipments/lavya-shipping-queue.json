@@ -1,0 +1,27 @@
+{
+  "updatedBy": "Lavya",
+  "purpose": "Shipping queue examples for L5 demo readiness.",
+  "shipments": [
+    {
+      "orderId": "AMAZON-4521",
+      "carrier": "Delhivery",
+      "awb": "DLV4521IN",
+      "status": "label ready",
+      "eta": "tomorrow"
+    },
+    {
+      "orderId": "FLIPKART-4522",
+      "carrier": "Ekart",
+      "awb": "EKT4522FK",
+      "status": "pickup scheduled",
+      "eta": "today"
+    },
+    {
+      "orderId": "MEESHO-4523",
+      "carrier": "Xpressbees",
+      "awb": "XBS4523MS",
+      "status": "needs packing",
+      "eta": "2 days"
+    }
+  ]
+}

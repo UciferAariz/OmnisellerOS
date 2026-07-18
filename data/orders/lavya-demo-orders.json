@@ -1,0 +1,52 @@
+{
+  "updatedBy": "Lavya",
+  "purpose": "Order examples for the L1-L5 presentation and visual QA.",
+  "ordersToday": 18,
+  "revenueTodayInr": 24500,
+  "orders": [
+    {
+      "id": "AMAZON-4521",
+      "marketplace": "amazon",
+      "buyerName": "Riya Sharma",
+      "sku": "SKU-DEMO-001",
+      "itemName": "Cotton Kurta Set",
+      "quantity": 1,
+      "unitPriceInr": 799,
+      "status": "processing",
+      "sla": "Pack by 4:30 PM"
+    },
+    {
+      "id": "FLIPKART-4522",
+      "marketplace": "flipkart",
+      "buyerName": "Kabir Mehta",
+      "sku": "SKU-LUNCH-004",
+      "itemName": "Steel Lunch Box",
+      "quantity": 1,
+      "unitPriceInr": 899,
+      "status": "packed",
+      "sla": "Pickup today"
+    },
+    {
+      "id": "MEESHO-4523",
+      "marketplace": "meesho",
+      "buyerName": "Anika Rao",
+      "sku": "SKU-DEMO-001",
+      "itemName": "Cotton Kurta Set",
+      "quantity": 1,
+      "unitPriceInr": 749,
+      "status": "new",
+      "sla": "Pack by 6:00 PM"
+    },
+    {
+      "id": "MYNTRA-4524",
+      "marketplace": "myntra",
+      "buyerName": "Dev Arora",
+      "sku": "SKU-SNKR-008",
+      "itemName": "Canvas Sneakers",
+      "quantity": 1,
+      "unitPriceInr": 1899,
+      "status": "ready",
+      "sla": "Pickup tomorrow"
+    }
+  ]
+}
